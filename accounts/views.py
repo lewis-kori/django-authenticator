@@ -1,7 +1,7 @@
 from django.shortcuts import render,redirect
 from django.contrib import messages
 from django.contrib.auth import authenticate,login
-from .forms import CustomUserCreationForm, LoginForm
+from .forms import LoginForm
 from .models import User
 
 def login_view(request):
