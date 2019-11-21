@@ -23,10 +23,8 @@ class LoginForm(forms.Form):
         if username and password:
             try:
                 user=authenticate(username=User.objects.get(email=username),password=password)
-                print(f"{user} from email auth")
             except:
                 user=authenticate(username=username,password=password)
-                print(f"{user} from username")
             if not user:
                 raise forms.ValidationError('The user does not exist')
         return super(LoginForm,self).clean(*args,**kwargs)

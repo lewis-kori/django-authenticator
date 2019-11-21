@@ -23,6 +23,7 @@ urlpatterns = [
 
     # route to api for authentication and registration
     path('auth/', include('djoser.urls')),
+    path('auth/', include('djoser.urls.jwt')),
     # handle custom user model registration form
     path('',RegistrationView.as_view(
              form_class=forms.CustomUserCreationForm,

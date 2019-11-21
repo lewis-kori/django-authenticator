@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/2.2/ref/settings/
 """
 
 import os
+from datetime import  timedelta
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -31,6 +32,8 @@ ALLOWED_HOSTS = []
 # Application definition
 
 INSTALLED_APPS = [
+    'accounts',
+    'djoser',
     'crispy_forms',
     'django_registration',
     'django.contrib.admin',
@@ -41,8 +44,7 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'phonenumber_field',
     'rest_framework',
-    'djoser',
-    'accounts',
+    'rest_framework_simplejwt',
 ]
 
 MIDDLEWARE = [
@@ -136,7 +138,18 @@ PHONENUMBER_DEFAULT_REGION='KE'
 DJOSER = {
     'SERIALIZERS': {
          'user_create': 'accounts.serializers.UserRegistrationSerializer'
-    }
+    },
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework_simplejwt.authentication.JWTAuthentication',
+        'rest_framework.authentication.SessionAuthentication',
+    ),
+}
+
+# JWT Authentication
+SIMPLE_JWT = {
+    'JWT_ALLOW_REFRESH': True,
+    'JWT_EXPIRATION_DELTA': timedelta(hours=1),
+    'JWT_REFRESH_EXPIRATION_DELTA': timedelta(days=7),
 }
 
 LOGIN_URL='login'
