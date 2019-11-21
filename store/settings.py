@@ -145,7 +145,7 @@ DJOSER = {
     ),
 }
 
-# JWT Authentication
+# JWT Authentication settings
 SIMPLE_JWT = {
     'JWT_ALLOW_REFRESH': True,
     'JWT_EXPIRATION_DELTA': timedelta(hours=1),
