@@ -5,7 +5,7 @@ cffi==1.12.3
 chardet==3.0.4
 confusable-homoglyphs==3.2.0
 cryptography==2.7
-Django==2.2.8
+Django==2.2.21
 django-crispy-forms==1.8.0
 django-phonenumber-field==3.0.1
 django-registration==3.0.1
