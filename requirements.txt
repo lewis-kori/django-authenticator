@@ -19,7 +19,7 @@ phonenumbers==8.10.23
 Pillow==6.2.0
 psycopg2==2.8.2
 pycparser==2.19
-PyJWT==1.7.1
+PyJWT==2.4.0
 pyOpenSSL==19.0.0
 PySocks==1.7.1
 pytz==2019.3
